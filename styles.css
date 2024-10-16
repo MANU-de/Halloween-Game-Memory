@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2b2a2a;
+    margin: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+	-webkit-text-stroke: 1px #F8F8F8;
+	text-shadow: 0px 2px 4px red;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+  }
+  
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the game and the button horizontally */
+    padding: 20px; /* Optional padding for overall spacing */
+  }
+  
+  .memory-game {
+    display: grid; /* Ensure you have a grid display for your game */
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px; /* Space between cards */
+    margin-bottom: 20px; /* Space below the game */
+  }
+  
+  
+  .memory-card {
+    width: 120px;
+    height: 120px;
+    background-color: #ff6600;
+    border-radius: 8px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    backface-visibility: visible;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+    margin: 8px;
+    
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    background-color: #ff6600;
+  }
+  
+  .back-face {
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transform: rotateY(180deg);
+  }
+  
+  
+  #reset-button {
+    background-color: #ff660C; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+  }
